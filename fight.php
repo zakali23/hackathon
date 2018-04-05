@@ -33,63 +33,79 @@ $i=0;
 
 //déroulement du COMBAT
 
+$combatLog = "";
+
 while ($fighterOneStats['durability']>0&&$fighterTwoStats['durability']>0) {
     $i++;
     while ($fighterOneStamina < 100 && $fighterTwoStamina < 100) {
         $fighterOneStamina += $fighterOneStats['speed'];
         $fighterTwoStamina += $fighterTwoStats['speed'];
     }
-    echo "<br><br>Round" . $i . "<br><br><br>";
+    $combatLog.= "<br><br><h3>Round" . $i . "</h3><br><br><br>";
 
     if ($fighterOneStamina >= 100) {
-        echo $fighterOneName . " attacks " . $fighterTwoName;
+        $combatLog.= "<p>".$fighterOneName . " attacks " . $fighterTwoName;
         if (rand(1, 100) <= $fighterOneStats['combat']) {
             $damages = $fighterOneStats['strength'];
             if (rand(1, 100) <= $fighterOneStats['intelligence']) {
-                echo ", it's a critical hit";
+                $combatLog.= ", it's a critical hit";
                 $damages += $fighterOneStats['power'];
             }
 
-            echo " dealing " . $damages . " damages!<br>";
+            $combatLog.= " dealing <span style='dmg'>" . $damages . " damages!</span><br>";
             $fighterTwoStats['durability'] += -$damages;
         } else {
-            echo " but misses...<br>";
+            $combatLog.= " but misses...<br>";
 
         }
         $fighterOneStamina += -100;
     }
     if ($fighterTwoStamina >= 100) {
-        echo $fighterTwoName . " attacks " . $fighterOneName;
+        $combatLog.= $fighterTwoName . " attacks " . $fighterOneName;
         if (rand(1, 100) <= $fighterTwoStats['combat']) {
             $damages = $fighterTwoStats['strength'];
             if (rand(1, 100) <= $fighterTwoStats['intelligence']) {
-                echo ", it's a critical hit ";
+                $combatLog.= ", it's a critical hit ";
                 $damages += $fighterTwoStats['power'];
             }
 
-            echo " dealing " . $damages . " damages!<br>";
+            $combatLog.= " dealing <span style='dmg'>" . $damages . " damages!</span><br>";
             $fighterOneStats['durability'] += -$damages;
         } else {
-            echo " but misses...<br>";
+            $combatLog.= " but misses...<br>";
         }
         $fighterTwoStamina += -100;
     }
-    echo "<br>";
+    $combatLog.= "<br>";
     if ($fighterOneStats['durability']>0){
-        echo $fighterOneName." is still fighting with ".$fighterOneStats['durability']." HP.<br>";
+        $combatLog.= $fighterOneName." is still fighting with <span style='life'>".$fighterOneStats['durability']."</span> HP.<br>";
     }
     else {
-        echo $fighterOneName." is K.O.!!!<br>";
+        $combatLog.= $fighterOneName." is <span style='ko'>K.O.!!!</span><br>";
     }
     if ($fighterTwoStats['durability']>0){
-        echo $fighterTwoName." is still fighting with ".$fighterTwoStats['durability']." HP.<br>";
+        $combatLog.= $fighterTwoName." is still fighting with <span style='life'>".$fighterTwoStats['durability']."</span> HP.<br>";
     }
     else {
-        echo $fighterTwoName." is K.O.!!!<br>";
+        $combatLog.= $fighterTwoName." is <span style='ko'>K.O.!!!</span><br></p>";
     }
 }
 
+// Renvoi du vainqueur
 
+if ($fighterOneStats['durability']<=0&&$fighterTwoStats['durability']>0){
+
+    $title = "<h1>".$fighterTwoName." WINS!!!</h1>";
+}
+elseif ($fighterTwoStats['durability']<=0&&$fighterOneStats['durability']>0){
+
+    $title = "<h1>".$fighterOneName." WINS!!!</h1>";
+}
+else{
+    $title = "<h1>DRAW!!!!</h1>";
+}
+echo $title;
+echo $combatLog;
 ?>
     <!--Javascipt bootstrapcdn-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
