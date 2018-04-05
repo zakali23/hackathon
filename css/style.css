@@ -1,1 +1,23 @@
-/*page pour css*/
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+h2, h3 {
+text-align: center;
+}
+
+h4 {
+padding-left: 12px;
+padding-right: 12px;
+text-align: center;
+}
+
+h1 {
+font-family: 'Press Start 2P', cursive;
+text-align: center;
+}
+
+.row {
+padding-top: 3px;
+padding-bottom: 3px;
+}
+
