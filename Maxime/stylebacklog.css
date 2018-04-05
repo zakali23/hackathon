@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
+
+
+img
+{
+    width: 100%;
+}
+
+#versus
+{
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+}
+
+
+.playerBox
+{
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+}
+
+h1
+{
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 1.5em;
+
+}
+
+h3
+{
+    font-family: 'Press Start 2P', Cursive;
+    font-size: 2em;
+
+}
+
+#winBox
+{
+    border:1px solid black;
+    background-image: url("http://www.chateaudeharoue.fr/wp-content/uploads/2013/03/HARO.jpg");
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#namePlayerOne, #namePlayerTwo
+{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+}
+
+
+
+
+
+/* CSS BACKLOG */
+
+.backlog p
+{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.3em;
+}
+
+.backlog h3
+{
+    color: dodgerblue;
+    font-size: 1.5em;
+}
+
+.backlog .dmg
+{
+    color: red;
+}
+
+.backlog .life
+{
+    color: yellow;
+}
+
+.backlog .ko
+{
+    color: mediumvioletred;
+}
