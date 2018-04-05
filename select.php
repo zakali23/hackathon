@@ -39,24 +39,24 @@
   }
   ?>
   </select></br>
-        <select onchange="this.form.submit()" name="fighter" class="custom-select" id="inputGroupSelect01">
+    <select onchange="this.form.submit()" name="fighter" class="custom-select" id="inputGroupSelect01">
             <option selected>Choisissez le hero</option>
 <?php
+var_dump($_POST['fighter']);
 if(isset($_POST['publishers'])){
     foreach ($parsee as $fighter){
         $publisher=str_replace(" ","_",$fighter['biography']['publisher']);
-        $name = $fighter['name'];
         if ($publisher==$_POST['publishers'])
         {
-            if (empty($_POST['fighter']))
+            if ($_POST['fighter']==str_replace(" ","_",$fighter['name']))
             {
 
 
-                echo "<option value='" . $name ."' selected">" . $name . "</option></br>";
+                echo "<option value='" . str_replace(" ","_",$fighter['name']) ."' selected>" . $fighter['name'] . "</option><br>";
             }
             else
             {
-                echo "<option value='" . $name ."'>" . $name . "</option></br>";
+                echo "<option value='" . str_replace(" ","_",$fighter['name']) ."'>" . $fighter['name'] . "</option><br>";
             }
         }
     }
@@ -64,7 +64,7 @@ if(isset($_POST['publishers'])){
 
 ?>
         </select></br>
-
+</form>
   <script>
   function myFunction() {
       document.getElementById("demo").innerHTML = "bon choix";
