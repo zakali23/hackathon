@@ -98,13 +98,18 @@ $combatLog.= $fighterOneName . " attacks " . $fighterTwoName;
 if ($fighterOneStats['durability']<=0&&$fighterTwoStats['durability']>0){
 
 $title = "<h1>".$fighterTwoName." WINS!!!</h1>";
+$music = "sounds/win.mp3";
 }
 elseif ($fighterTwoStats['durability']<=0&&$fighterOneStats['durability']>0){
 
 $title = "<h1>".$fighterOneName." WINS!!!</h1>";
+
+    $music = "sounds/fail-trombone-02.mp3";
 }
 else{
 $title = "<h1>DRAW!!!!</h1>";
+
+    $music = "sounds/fail-trombone-02.mp3";
 }
 
 ?>
@@ -136,8 +141,8 @@ $title = "<h1>DRAW!!!!</h1>";
         </figure>
     </div>
     <div class="row justify-content-around">
-        <h3 id="namePlayerOne"><?php echo $fighterOneName ?></h3>
-        <h3 id="namePlayerTwo"><?php echo $fighterTwoName ?></h3>
+        <h3 id="namePlayerOne"><?php echo $fighterOneName; ?></h3>
+        <h3 id="namePlayerTwo"><?php echo $fighterTwoName; ?></h3>
     </div>
 </section>
 
@@ -165,10 +170,10 @@ $title = "<h1>DRAW!!!!</h1>";
     </div>
 </div>
 
-<!--chargement des son de victoire et défaite-->
+<!--chargement des sons de victoire et défaite-->
+
 <audio controls="controls" autoplay="autoplay" preload="auto" hidden="hidden">
-    <source src="sounds/win.mp3" type="audio/mp3">
-    <source src="sounds/fail-trombone-02.mp3" type="audio/mp3">
+    <source src="<?php echo $music; ?>" type="audio/mp3">
 
 </audio>
 
