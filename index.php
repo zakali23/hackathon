@@ -25,15 +25,9 @@ $publishers=array_unique($publishers,SORT_STRING);
   <header class="row">
     <h1 class="col">Wild Fighters Arena</h1>
   </header>
-<<<<<<< HEAD
-  <h2 class="alert alert-danger">Les Wilders sont des sauvages !!! Place au combat !!!</h2>
-  <h3>Sélectionne ton univers et ton personnage</h3>
-  <form class="container form-group" action="index.php" method="post">
-=======
   <h2 class="alert alert-danger">Get ready to ruuuumble !!!</h2>
   <h3>Select your character...</h3>
-  <form class="container form-group" action="index.html" method="post">
->>>>>>> c5731146051f1e2b51fe53294c36c6abeeda0603
+  <form class="container form-group" action="index.php" method="post">
     <div class="row">
       <select class="col form-control" onchange="this.form.submit()" name="publisherOne">
           <option>Select publisher</option>
@@ -58,7 +52,7 @@ $publishers=array_unique($publishers,SORT_STRING);
           }
           ?>
       </select>
-<<<<<<< HEAD
+
       <h4 class="col-xs">Univers</h4>
       <select class="col form-control" onchange="this.form.submit()" name="publisherTwo">
           <option value="">Select publisher</option>
@@ -82,12 +76,7 @@ $publishers=array_unique($publishers,SORT_STRING);
               }
           }
           ?>
-=======
-      <h4 class="col-xs">Universe</h4>
-      <select class="col form-control" name="univers2">
-        <option value="1"></option>
-        <option value="2"></option>
->>>>>>> c5731146051f1e2b51fe53294c36c6abeeda0603
+
       </select>
     </div>
     <div class="row">
@@ -114,8 +103,8 @@ $publishers=array_unique($publishers,SORT_STRING);
           }
           ?>
       </select>
-<<<<<<< HEAD
-      <h4 class="col-xs">Personnage</h4>
+
+      <h4 class="col-xs">Character</h4>
       <select class="col form-control" onchange="this.form.submit()" name="fighterTwo">
           <?php
           if(!empty($_POST['publisherTwo'])){
@@ -137,60 +126,60 @@ $publishers=array_unique($publishers,SORT_STRING);
               }
           }
           ?>
-=======
-      <h4 class="col-xs">Character</h4>
-      <select class="col form-control" name="perso2">
-        <option value="1"></option>
-        <option value="2"></option>
->>>>>>> c5731146051f1e2b51fe53294c36c6abeeda0603
       </select>
     </div>
-    
+
     <div class="row">
       <div class="col-md-4 card">
-        <img class="card-img-top" src="img/spiderman.png" alt="">
+        <img class="card-img-top" src="<?php echo $_SESSION['fighterOneInfos']['images']['lg'];?>" alt="">
         <div class="card-body">
-          <h5 class="card-title">Spiderman</h5>
-          <h6>INT</h6>
+          <h5 class="card-title"><?php echo $_SESSION['fighterOneInfos']['name']; ?></h5>
+          <h6>Intelligence</h6>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterOneInfos']['powerstats']['intelligence'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterOneInfos']['powerstats']['intelligence'] ?></div>
           </div>
-          <h6>STR</h6>
+          <h6>Strength</h6>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterOneInfos']['powerstats']['strength'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterOneInfos']['powerstats']['strength'] ?></div>
           </div>
-          <h6>SPD</h6>
+          <h6>Speed</h6>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterOneInfos']['powerstats']['speed'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterOneInfos']['powerstats']['speed'] ?></div>
           </div>
-          <h6>DUR</h6>
+          <h6>Durability</h6>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterOneInfos']['powerstats']['durability'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterOneInfos']['powerstats']['durability'] ?></div>
           </div>
-          <h6>POW</h6>
+          <h6>Power</h6>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterOneInfos']['powerstats']['power'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterOneInfos']['powerstats']['power'] ?></div>
           </div>
-          <h6>ACC</h6>
+          <h6>Accuracy</h6>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterOneInfos']['powerstats']['combat'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterOneInfos']['powerstats']['combat'] ?></div>
           </div>
         </div>
-          <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso1">Details</a>
-        </div>
-        <div class="modal fade" id="modalperso1" tabindex="-1" role="dialog" aria-labelledby="modalperso1" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                CONTENU
+        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso1">Details</a>
+      </div>
+      <div class="modal fade" id="modalperso1" tabindex="-1" role="dialog" aria-labelledby="modalperso1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel"><?php echo $_SESSION['fighterOneInfos']['name']; ?></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Full Name: <?php echo $_SESSION['fighterOneInfos']['biography']['fullName']; ?></li>
+                    <li class="list-group-item">Race: <?php echo $_SESSION['fighterOneInfos']['appearance']['race']; ?></li>
+                    <li class="list-group-item">Gender: <?php echo$_SESSION['fighterOneInfos']['appearance']['gender']; ?></li>
+                    <li class="list-group-item">Ocupation: <?php echo$_SESSION['fighterOneInfos']['work']['occupation']; ?></li>
+                    <li class="list-group-item">irst Appearance: <?php echo$_SESSION['fighterOneInfos']['biography']['firstAppearance']; ?></li>
+                </ul>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
               </div>
             </div>
           </div>
@@ -218,44 +207,58 @@ $publishers=array_unique($publishers,SORT_STRING);
         </div>
       </div>
       <div class="col-md-4 card">
-        <img class="card-img-top" src="img/vegeta.jpg" alt="">
+        <img class="card-img-top" src="<?php echo $_SESSION['fighterTwoInfos']['images']['lg'];?>" alt="">
         <div class="card-body">
-          <h5 class="card-title">Vegeta</h5>
-          <p class="card-text">ICI LA BIOGRAPHIE</p>
-          <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso2">Details</a>
+          <h5 class="card-title"><?php echo $_SESSION['fighterTwoInfos']['name']; ?></h5>
+          <h6>Intelligence</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterTwoInfos']['powerstats']['intelligence'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterTwoInfos']['powerstats']['intelligence'] ?></div>
+            </div>
+            <h6>Strength</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterTwoInfos']['powerstats']['strength'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterTwoInfos']['powerstats']['strength'] ?></div>
+            </div>
+            <h6>Speed</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterTwoInfos']['powerstats']['speed'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterTwoInfos']['powerstats']['speed'] ?></div>
+            </div>
+            <h6>Durability</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterTwoInfos']['powerstats']['durability'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterTwoInfos']['powerstats']['durability'] ?></div>
+            </div>
+            <h6>Power</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterTwoInfos']['powerstats']['power'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterTwoInfos']['powerstats']['power'] ?></div>
+            </div>
+            <h6>Accuracy</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $_SESSION['fighterTwoInfos']['powerstats']['combat'] ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['fighterTwoInfos']['powerstats']['combat'] ?></div>
+            </div>
         </div>
+
+
+          <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso2">Details</a>
       </div>
       <div class="modal fade" id="modalperso2" tabindex="-1" role="dialog" aria-labelledby="modalperso2" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+              <h5 class="modal-title" id="exampleModalLabel"><?php echo $_SESSION['fighterTwoInfos']['name']; ?></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
+                <ul class="list-group">
+                    <li class="list-group-item">Full Name: <?php echo $_SESSION['fighterTwoInfos']['biography']['fullName']; ?></li>
+                    <li class="list-group-item">Race: <?php echo $_SESSION['fighterTwoInfos']['appearance']['race']; ?></li>
+                    <li class="list-group-item">Gender: <?php echo$_SESSION['fighterTwoInfos']['appearance']['gender']; ?></li>
+                    <li class="list-group-item">Ocupation: <?php echo$_SESSION['fighterTwoInfos']['work']['occupation']; ?></li>
+                    <li class="list-group-item">irst Appearance: <?php echo$_SESSION['fighterTwoInfos']['biography']['firstAppearance']; ?></li>
+                </ul>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
             </div>
           </div>
         </div>
@@ -270,7 +273,7 @@ $publishers=array_unique($publishers,SORT_STRING);
 
   <?php
   //var_dump($_SESSION['fighterOneInfos']);
-  var_dump($_SESSION['fighterTwoInfos']['name']);
+  var_dump($_SESSION['fighterTwoInfos']['powerstats']['intelligence']);
 
   ?>
   
