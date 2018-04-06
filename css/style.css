@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
+h6 {
+padding-top: 0 !important;
+}
+
 h2, h3 {
 text-align: center;
 }
