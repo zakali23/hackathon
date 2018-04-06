@@ -41,44 +41,44 @@
         <img class="card-img-top" src="img/spiderman.png" alt="">
         <div class="card-body">
           <h5 class="card-title">Spiderman</h5>
-          <h6>INT</h6>
+          <h6>Intelligence</h6>
           <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
           </div>
-          <h6>STR</h6>
+          <h6>Strength</h6>
           <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
           </div>
-          <h6>SPD</h6>
+          <h6>Speed</h6>
           <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
           </div>
-          <h6>DUR</h6>
+          <h6>Durability</h6>
           <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
           </div>
-          <h6>POW</h6>
+          <h6>Power</h6>
           <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
           </div>
-          <h6>ACC</h6>
+          <h6>Accuracy</h6>
           <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
           </div>
         </div>
-          <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso1">Details</a>
-        </div>
-        <div class="modal fade" id="modalperso1" tabindex="-1" role="dialog" aria-labelledby="modalperso1" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                CONTENU
+        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso1">Details</a>
+      </div>
+      <div class="modal fade" id="modalperso1" tabindex="-1" role="dialog" aria-labelledby="modalperso1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              CONTENU
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
@@ -111,7 +111,30 @@
         <img class="card-img-top" src="img/vegeta.jpg" alt="">
         <div class="card-body">
           <h5 class="card-title">Vegeta</h5>
-          <p class="card-text">ICI LA BIOGRAPHIE</p>
+          <h6>Intelligence</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Strength</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Speed</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Durability</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Power</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Accuracy</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
           <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso2">Details</a>
         </div>
       </div>
@@ -125,24 +148,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
-              </div>
+              CONTENU
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-h6 {
-padding-top: 0 !important;
-}
-
 h2, h3 {
 text-align: center;
 }
@@ -19,7 +15,15 @@ font-family: 'Press Start 2P', cursive;
 text-align: center;
 }
 
+h6 {
+margin-bottom: 0px;
+}
+
 .row {
 padding-top: 3px;
 padding-bottom: 3px;
+}
+
+.progress {
+margin-bottom: 10px;
 }
