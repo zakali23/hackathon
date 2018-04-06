@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (isset($_POST['arena'])){
+    $_SESSION['arena']=$_POST['arena'];
+}
+
 $jsonselect = file_get_contents('https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json');
 $allfighters = json_decode($jsonselect, true);
 //var_dump($allfighters);
@@ -7,20 +12,24 @@ $allfighters = json_decode($jsonselect, true);
 if (isset( $_SESSION['fighterOneInfos'])){
     $fighterOneName = $_SESSION['fighterOneInfos']['name'];
     $fighterOneStats = $_SESSION['fighterOneInfos']['powerstats'];
+    $fighterOneImage = $_SESSION['fighterOneInfos']['images']['lg'];
 }
 else{
     $n=rand(0,562);
     $fighterOneName = $allfighters[$n]['name'];
     $fighterOneStats = $allfighters[$n]['powerstats'];
+    $fighterOneImage = $allfighters[$n]['images']['lg'];
 }
 if (isset( $_SESSION['fighterTwoInfos'])){
     $fighterTwoName = $_SESSION['fighterTwoInfos']['name'];
     $fighterTwoStats = $_SESSION['fighterTwoInfos']['powerstats'];
+    $fighterTwoImage = $_SESSION['fighterTwoInfos']['images']['lg'];
 }
 else{
     $n=rand(0,562);
     $fighterTwoName = $allfighters[$n]['name'];
     $fighterTwoStats = $allfighters[$n]['powerstats'];
+    $fighterTwoImage = $allfighters[$n]['images']['lg'];
 }
 
 
@@ -98,7 +107,7 @@ $combatLog.= $fighterOneName . " attacks " . $fighterTwoName;
 if ($fighterOneStats['durability']<=0&&$fighterTwoStats['durability']>0){
 
 $title = "<h1>".$fighterTwoName." WINS!!!</h1>";
-$music = "sounds/win.mp3";
+    $music = "sounds/fail-trombone-02.mp3";
 }
 elseif ($fighterTwoStats['durability']<=0&&$fighterOneStats['durability']>0){
 
@@ -128,16 +137,16 @@ $title = "<h1>DRAW!!!!</h1>";
 
 <!-- Box Winner -->
 
-<section class="container-fluid" id="winBox">
+<section class="container-fluid" style="background-image:url(<?php echo $_SESSION['arena']; ?>)" id="winBox">
     <div class="row justify-content-around">
         <figure class="col-4 playerBox">
-            <img class="img-fluid" src="<?php echo $_SESSION['fighterOneInfos']['images']['lg']; ?>">
+            <img class="img-fluid" src="<?php echo $fighterOneImage; ?>">
         </figure>
         <figure class="col-2" id="versus">
             <img class="img-fluid" src="https://opengameart.org/sites/default/files/VERSUS%20Graphic.png" id="versusImg">
         </figure>
         <figure class="col-4 playerBox">
-            <img class="img-fluid" src="<?php echo $_SESSION['fighterTwoInfos']['images']['lg']; ?>">
+            <img class="img-fluid" src="<?php echo $fighterTwoImage; ?>">
         </figure>
     </div>
     <div class="row justify-content-around">
@@ -174,7 +183,6 @@ $title = "<h1>DRAW!!!!</h1>";
 
 <audio controls="controls" autoplay="autoplay" preload="auto" hidden="hidden">
     <source src="<?php echo $music; ?>" type="audio/mp3">
-
 </audio>
 
 </body>

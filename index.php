@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['arena']="img/1.jpg";
 $json=file_get_contents("https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json");
 $parsee=json_decode($json,true);
 $publishers = array();
@@ -9,7 +9,7 @@ foreach ( $parsee as $publish){
 
 }
 $publishers=array_unique($publishers,SORT_STRING);
-
+sort($publishers,SORT_STRING);
 
 ?>
 
@@ -124,8 +124,8 @@ $publishers=array_unique($publishers,SORT_STRING);
           }
           ?>
       </select>
-    </div>
-    
+  </form>
+  <form action="fighter.php" name="ArenaImage" method="post">
     <div class="row">
       <div class="col-md-4 card">
         <img class="card-img-top" src="img/spiderman.png" alt="">
@@ -135,46 +135,71 @@ $publishers=array_unique($publishers,SORT_STRING);
           <a href="#" class="btn btn-info">Caractéristiques</a>
         </div>
       </div>
-      <div class="col-md-4">
-      <h4>Arène</h4>
-        <div class="container">
-          <div class="row">
-            <img class="col-md-6 img-fluid img-thumbnail" src="img/1tn.jpg" alt="">
-            <img class="col-md-6 img-fluid img-thumbnail" src="img/2tn.jpg" alt="">
-          </div>
-          <div class="row">
-            <img class="col-md-6 img-fluid img-thumbnail" src="img/3tn.jpg" alt="">
-            <img class="col-md-6 img-fluid img-thumbnail" src="img/4tn.jpg" alt="">
-          </div>
-          <div class="row">
-            <img class="col-md-6 img-fluid img-thumbnail" src="img/5tn.jpg" alt="">
-            <img class="col-md-6 img-fluid img-thumbnail" src="img/6tn.jpg" alt="">
-          </div>
-          <div class="row">
-            <img class="col-md-6 img-fluid img-thumbnail" src="img/7tn.jpg" alt="">
-            <img class="col-md-6 img-fluid img-thumbnail" src="img/8tn.jpg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 card">
-        <img class="card-img-top" src="img/vegeta.jpg" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Vegeta</h5>
-          <p class="card-text">Biographie: Machin / Place of Birth</p>
-          <a href="#" class="btn btn-info">Caractéristiques</a>
-        </div>
-      </div>
-    </div>
-    
 
-  </form>
-  <form method="post" action="fighter.php">
+          <div class="col-md-4">
+
+            <h4>Arène</h4>
+
+            <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                      <img class="img-fluid img-thumbnail arena1" src="img/1tn.jpg"/>
+                      <input class="radio" type="radio" name="arena" value="img/1.jpg"/>
+                  </div>
+                  <div class="col-md-6">
+                      <img class="img-fluid img-thumbnail arena2" src="img/2tn.jpg"/>
+                      <input class="radio" type="radio" name="arena" value="img/2.jpg"/>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <img class="img-fluid img-thumbnail arena3" src="img/3tn.jpg"/>
+                      <input class="radio" type="radio" name="arena" value="img/3.jpg"/>
+                  </div>
+                  <div class="col-md-6">
+                      <img class="img-fluid img-thumbnail arena4" src="img/4tn.jpg"/>
+                      <input class="radio" type="radio" name="arena" value="img/4.jpg"/>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <img class="img-fluid img-thumbnail arena5" src="img/5tn.jpg"/>
+                      <input class="radio" type="radio" name="arena" value="img/5.jpg"/>
+                  </div>
+                  <div class="col-md-6">
+                      <img class="img-fluid img-thumbnail arena6" src="img/6tn.jpg"/>
+                      <input class="radio" type="radio" name="arena" value="img/6.jpg"/>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <img class="img-fluid img-thumbnail arena7" src="img/7tn.jpg"/>
+                      <input class="radio" type="radio" name="arena" value="img/7.jpg"/>
+                  </div>
+                  <div class="col-md-6">
+                      <img class="img-fluid img-thumbnail arena8" src="img/8tn.jpg"/>
+                      <input class="radio" type="radio" name="arena" value="img/8.jpg"/>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+              <div class="col-md-4 card">
+                <img class="card-img-top" src="img/vegeta.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Vegeta</h5>
+                  <p class="card-text">Biographie: Machin / Place of Birth</p>
+                  <a href="#" class="btn btn-info">Caractéristiques</a>
+                </div>
+              </div>
+          </div>
+
       <button class="col btn btn-danger" type="submit" name="">Fight !!!</button>
   </form>
 
   <?php
-  var_dump($_SESSION['fighterOneInfos']);
-  var_dump($_SESSION['fighterTwoInfos']);
+  //var_dump($_SESSION['fighterOneInfos']);
+  //var_dump($_SESSION['fighterTwoInfos']);
   ?>
   
   <!--Javascipt bootstrapcdn-->

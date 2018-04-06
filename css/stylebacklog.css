@@ -39,8 +39,9 @@ h3
 
 #winBox
 {
+    background-repeat: no-repeat;
+    background-size: cover;
     border:1px solid black;
-    background-image: url("http://www.chateaudeharoue.fr/wp-content/uploads/2013/03/HARO.jpg");
     margin-top: 2em;
     margin-bottom: 2em;
 }
