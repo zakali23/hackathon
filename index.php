@@ -112,7 +112,7 @@ $publishers=array_unique($publishers,SORT_STRING);
                   {
                       if ($_POST['fighterTwo']==str_replace(" ","_",$fighterTwo['name']))
                       {
-                          $_SESSION['fighterTwoInfos']=$fighter;
+                          $_SESSION['fighterTwoInfos']=$fighterTwo;
                           echo "<option value='" . str_replace(" ","_",$fighterTwo['name']) ."' selected>" . $fighterTwo['name'] . "</option><br>";
                       }
                       else
@@ -173,8 +173,9 @@ $publishers=array_unique($publishers,SORT_STRING);
   </form>
 
   <?php
-  var_dump($_SESSION['fighterOneInfos']);
-  var_dump($_SESSION['fighterTwoInfos']);
+  //var_dump($_SESSION['fighterOneInfos']);
+  var_dump($_SESSION['fighterTwoInfos']['name']);
+
   ?>
   
   <!--Javascipt bootstrapcdn-->
