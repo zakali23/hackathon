@@ -50,8 +50,7 @@ if(isset($_POST['publishers'])){
         {
             if ($_POST['fighter']==str_replace(" ","_",$fighter['name']))
             {
-
-
+                $_SESSION['fighterOneInfos']=$fighter;
                 echo "<option value='" . str_replace(" ","_",$fighter['name']) ."' selected>" . $fighter['name'] . "</option><br>";
             }
             else
@@ -61,14 +60,13 @@ if(isset($_POST['publishers'])){
         }
     }
 }
-
+var_dump($_SESSION['fighterOneInfos']);
 ?>
         </select></br>
 </form>
+
   <script>
-  function myFunction() {
-      document.getElementById("demo").innerHTML = "bon choix";
-  }
+
   </script>
     <!--Javascipt bootstrapcdn-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
