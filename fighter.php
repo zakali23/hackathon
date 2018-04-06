@@ -52,7 +52,7 @@ while ($fighterOneStamina < 100 && $fighterTwoStamina < 100) {
 $fighterOneStamina += $fighterOneStats['speed'];
 $fighterTwoStamina += $fighterTwoStats['speed'];
 }
-$combatLog.= "<br><br><h3>Round " . $i . "</h3><p><br><br><br>";
+$combatLog.= "<br><br><h3>Round " . $i . "</h3><p><br>";
 
 if ($fighterOneStamina >= 100) {
 $combatLog.= $fighterOneName . " attacks " . $fighterTwoName;
@@ -113,7 +113,7 @@ elseif ($fighterTwoStats['durability']<=0&&$fighterOneStats['durability']>0){
 
 $title = "<h1>".$fighterOneName." WINS!!!</h1>";
 
-    $music = "sounds/fail-trombone-02.mp3";
+    $music = "sounds/win.mp3";
 }
 else{
 $title = "<h1>DRAW!!!!</h1>";
@@ -167,14 +167,14 @@ $title = "<h1>DRAW!!!!</h1>";
 </section>
 
 <div class="row justify-content-center">
-    <div style="col-2">
+    <div>
         <form action="" method="POST">
-            <button type="submit" class="btn btn-primary">Rematch</button>
+            <button style="margin-right:20px;" type="submit" class="btn btn-warning">Rematch</button>
         </form>
     </div>
-    <div style="col-2">
-        <form action="index.php" method="POST">
-            <button type="submit" class="btn btn-primary">New Match</button>
+    <div>
+        <form action="newMatch.php" method="POST">
+            <button type="submit" class="btn btn-warning">New Match</button>
         </form>
     </div>
 </div>

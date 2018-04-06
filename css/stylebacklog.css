@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
 
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Marvel');
 
 img
 {
@@ -32,7 +32,8 @@ h1
 
 h3
 {
-    font-family: 'Press Start 2P', Cursive;
+
+    font-family: 'Marvel', sans-serif;
     font-size: 2.2vw;
 
 }
@@ -63,17 +64,21 @@ h3
 
 
 /* CSS BACKLOG */
+.backlog{
 
+    text-align: center;
+}
 .backlog p
 {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.3em;
+    text-align: center;
+    font-family: 'Marvel', sans-serif;
+    font-size: 2em;
 }
 
 .backlog h3
 {
-    color: dodgerblue;
-    font-size: 1.5em;
+    color: #FF7F50;
+    font-size: 3em;
 }
 
 .dmg
