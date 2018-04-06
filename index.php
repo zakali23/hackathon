@@ -189,7 +189,7 @@ sort($publishers,SORT_STRING);
       </div>
           <div class="col-md-4">
 
-            <h4>Arène</h4>
+            <h4>Arena</h4>
 
             <div class="container">
               <div class="row">
