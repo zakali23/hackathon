@@ -1,14 +1,24 @@
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Marvel');
+
+
+body {
+font-family: 'Marvel', sans-serif;
+}
 
 h2, h3 {
 text-align: center;
+font-weight: bold;
+
 }
+
 
 h4 {
 padding-left: 12px;
 padding-right: 12px;
 text-align: center;
+font-weight: bold;
 }
 
 h1 {
@@ -16,15 +26,44 @@ font-family: 'Press Start 2P', cursive;
 text-align: center;
 }
 
+h5 {
+font-size: 1.7em;
+font-weight: bold;
+}
+
 h6 {
 margin-bottom: 0px;
+font-size: 1.5em;
 }
 
 .row {
-padding-top: 3px;
-padding-bottom: 3px;
+padding-top: 20px;
+padding-bottom: 20px;
 }
 
 .progress {
 margin-bottom: 10px;
+height: 20px;
+font-size: 1.2em;
+}
+
+.btn {
+font-size: 1.4em;
+}
+
+.modal-body {
+font-size: 1.4em;
+}
+
+header img {
+height: 300px;
+padding-bottom: 10px;
+}
+
+.alert-danger {
+color: #FF7F50;
+background-color: #FAE3C2;
+border-color: #F2B256;
+margin-top: 20px;
+margin-bottom: 20px;
 }
