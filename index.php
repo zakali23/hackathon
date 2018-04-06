@@ -23,11 +23,11 @@ $publishers=array_unique($publishers,SORT_STRING);
 </head>
 <body class="container-fluid">
   <header class="row">
-      <h1 class="col">Wild Fighters Arena</h1>
+    <h1 class="col">Wild Fighters Arena</h1>
   </header>
-  <h2 class="alert alert-danger">Les Wilders sont des sauvages !!! Place au combat !!!</h2>
-  <h3>Sélectionne ton univers et ton personnage</h3>
-  <form class="container form-group" action="index.php" method="post">
+  <h2 class="alert alert-danger">Get ready to ruuuumble !!!</h2>
+  <h3>Select your character...</h3>
+  <form class="container form-group" action="index.html" method="post">
     <div class="row">
       <select class="col form-control" onchange="this.form.submit()" name="publisherOne">
           <option>Select publisher</option>
@@ -131,12 +131,53 @@ $publishers=array_unique($publishers,SORT_STRING);
         <img class="card-img-top" src="img/spiderman.png" alt="">
         <div class="card-body">
           <h5 class="card-title">Spiderman</h5>
-          <p class="card-text">Biographie: Machin / Place of Birth</p>
-          <a href="#" class="btn btn-info">Caractéristiques</a>
+          <h6>Intelligence</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Strength</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Speed</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Durability</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Power</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Accuracy</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso1">Details</a>
+      </div>
+      <div class="modal fade" id="modalperso1" tabindex="-1" role="dialog" aria-labelledby="modalperso1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              CONTENU
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-      <h4>Arène</h4>
+        <h4>Arena</h4>
         <div class="container">
           <div class="row">
             <img class="col-md-6 img-fluid img-thumbnail" src="img/1tn.jpg" alt="">
@@ -160,8 +201,49 @@ $publishers=array_unique($publishers,SORT_STRING);
         <img class="card-img-top" src="img/vegeta.jpg" alt="">
         <div class="card-body">
           <h5 class="card-title">Vegeta</h5>
-          <p class="card-text">Biographie: Machin / Place of Birth</p>
-          <a href="#" class="btn btn-info">Caractéristiques</a>
+          <h6>Intelligence</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Strength</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Speed</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Durability</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Power</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <h6>Accuracy</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">valeur</div>
+          </div>
+          <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalperso2">Details</a>
+        </div>
+      </div>
+      <div class="modal fade" id="modalperso2" tabindex="-1" role="dialog" aria-labelledby="modalperso2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              CONTENU
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

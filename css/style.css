@@ -16,8 +16,15 @@ font-family: 'Press Start 2P', cursive;
 text-align: center;
 }
 
+h6 {
+margin-bottom: 0px;
+}
+
 .row {
 padding-top: 3px;
 padding-bottom: 3px;
 }
 
+.progress {
+margin-bottom: 10px;
+}
