@@ -1,30 +1,41 @@
 <?php
-
+session_start();
 $jsonselect = file_get_contents('https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json');
 $allfighters = json_decode($jsonselect, true);
 //var_dump($allfighters);
-$n=rand(0,562);
-$fighterOneId = $allfighters[$n]['id'];
-$fighterOneName = $allfighters[$n]['name'];
-$n=rand(0,562);
-$fighterTwoId = $allfighters[$n]['id'];
-$fighterTwoName = $allfighters[$n]['name'];
 
-$jsonselect = 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/powerstats/'.$fighterOneId.".json";
-$fighterOneStats = json_decode(file_get_contents($jsonselect),true);
-//var_dump($fighterOneStats);
-$jsonselect = 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/powerstats/'.$fighterTwoId.".json";
-$fighterTwoStats = json_decode(file_get_contents($jsonselect),true);
-//var_dump($fighterTwoStats);
+if (isset( $_SESSION['fighterOneInfos'])){
+    $fighterOneName = $_SESSION['fighterOneInfos']['name'];
+    $fighterOneStats = $_SESSION['fighterOneInfos']['powerstats'];
+}
+else{
+    $n=rand(0,562);
+    $fighterOneName = $allfighters[$n]['name'];
+    $fighterOneStats = $allfighters[$n]['powerstats'];
+}
+if (isset( $_SESSION['fighterTwoInfos'])){
+    $fighterTwoName = $_SESSION['fighterTwoInfos']['name'];
+    $fighterTwoStats = $_SESSION['fighterTwoInfos']['powerstats'];
+}
+else{
+    $n=rand(0,562);
+    $fighterTwoName = $allfighters[$n]['name'];
+    $fighterTwoStats = $allfighters[$n]['powerstats'];
+}
+
+
+
+
+//initialisation du combat
+
 $fighterOneStats['durability']*=10;
 $fighterTwoStats['durability']*=10;
 $fighterOneStamina=0;
 $fighterTwoStamina=0;
 $i=0;
+$combatLog = "";
 
 //déroulement du COMBAT
-
-$combatLog = "";
 
 while ($fighterOneStats['durability']>0&&$fighterTwoStats['durability']>0) {
 $i++;
@@ -95,8 +106,7 @@ $title = "<h1>".$fighterOneName." WINS!!!</h1>";
 else{
 $title = "<h1>DRAW!!!!</h1>";
 }
-//echo $title;
-//echo $combatLog;
+
 ?>
 
 <!DOCTYPE html>
@@ -116,13 +126,13 @@ $title = "<h1>DRAW!!!!</h1>";
 <section class="container-fluid" id="winBox">
     <div class="row justify-content-around">
         <figure class="col-4 playerBox">
-            <img class="img-fluid" src="https://vignette.wikia.nocookie.net/vsbattles/images/5/5b/Wolverine_Portrait_Art.png/revision/latest?cb=20151204133058">
+            <img class="img-fluid" src="<?php echo $_SESSION['fighterOneInfos']['images']['lg']; ?>">
         </figure>
         <figure class="col-2" id="versus">
             <img class="img-fluid" src="https://opengameart.org/sites/default/files/VERSUS%20Graphic.png" id="versusImg">
         </figure>
         <figure class="col-4 playerBox">
-            <img class="img-fluid" src="https://vignette.wikia.nocookie.net/king-harkinian/images/4/47/Spongebob.png/revision/latest?cb=20170518185222">
+            <img class="img-fluid" src="<?php echo $_SESSION['fighterTwoInfos']['images']['lg']; ?>">
         </figure>
     </div>
     <div class="row justify-content-around">
@@ -143,18 +153,24 @@ $title = "<h1>DRAW!!!!</h1>";
 </section>
 
 <div class="row justify-content-center">
-    <div col-2>
+    <div style="col-2">
         <form action="" method="POST">
             <button type="submit" class="btn btn-primary">Rematch</button>
         </form>
     </div>
-    <div col-2>
+    <div style="col-2">
         <form action="index.php" method="POST">
             <button type="submit" class="btn btn-primary">New Match</button>
         </form>
     </div>
 </div>
 
+<!--chargement des son de victoire et défaite-->
+<audio controls="controls" autoplay="autoplay" preload="auto" hidden="hidden">
+    <source src="sounds/win.mp3" type="audio/mp3">
+    <source src="sounds/fail-trombone-02.mp3" type="audio/mp3">
+
+</audio>
 
 </body>
 
